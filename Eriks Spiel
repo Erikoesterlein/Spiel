@@ -1,0 +1,154 @@
+from tkinter import *
+import time
+
+master = Tk()
+
+def uiPrint():
+    print("'klick'")    #Diese meldung erscheint nachdem man auf den Button ''Klick'' drückt.
+    print(klick)        #Danach wird immer die Anzahl der Punkte angezeigt
+    
+
+
+
+
+klick = 0
+mult = 1    #Dies sind jeweils die Anfangswerte
+dcp1 = 0
+
+
+#hier werden die unterschiedlichen Knöpfe defieniert.
+def DoppelKlick ():
+    global klick            
+    global mult
+    if klick < 50:  #Diese if-Bedingung ist bei allen kaufbaren Knöpfen zu finden. Sie Zeigt den Preis an und liefert eine Meldung, wenn nicht genügend Punkte gesammelt wurden.
+        print ("Du hast leider nicht genügend Klicks gesammelt!")
+    
+    elif klick >= 50:
+         mult = mult*2
+         klick = mult*2  #wenn jedoch genüg punkte vorhanden sind und man sich entschließt einen Multiplikator zu kaufen, dann sind hier jeweils die größe des Multiplikators zu sehen.
+         klick = klick - 50
+         print ("Erfolgreich gekauft! Nun zählen deine Klicks doppelt!")    #Diese Meldung erhält man bei einem erfolgreichem Kauf.
+
+def DreifachKlick ():
+    global klick
+    global mult
+    
+    if klick < 250:
+        print ("Du hast leider nicht genügend Klicks gesammelt!")
+    elif klick >= 250:
+        
+         mult = mult*3
+         klick = mult*3
+         klick = klick - 250
+         print ("Erfolgreich gekauft! Nun wurden deine Klicks verdreifacht!")
+   
+def info():         #Die Info zeigt die Spielregeln und die Preise der diversen Knöpfe.
+    global klick
+    global mult
+    if klick <= 0:
+        print ("Das Ziel dieses Spieles ist, als erstes 10000000 Punkte zu haben. Wenn ein Spieler 100000 Punkte hat muss der Spieler auf 'FERTIG' drücken \nDurch das Klicken werden diese PUNKTE gesammelt. Als Hilfsmittel wird eine Stoppuhr benötigt, welche die Zeit beider Spieler misst. Der Gewinner ist dann derjenige, der am schnellsten den knopf gedrückt hat! \n1.Doppel-Klick kann bei 50 Klicks gekauft werden! \n2.Dreifach-Klick kann bei 250Klicks gekauft werden \n3.Vierfach-Klick kann bei 1000 Klicks gekauft werden \4.Pi-Klick kann bei 9999 Klicks gekauft werden! \n ***Beim Kauf fängt man komplett von neu mit den Punkten an. Der Preis wird dann jeweils von 0 abgezogen ***") 
+    elif klick
+    > 0:
+        print ("Das Ziel dieses Spieles ist, als erstes 10000000 Punkte zu haben. Wenn ein Spieler 100000 Punkte hat muss der Spieler auf 'FERTIG' drücken \nDurch das Klicken werden diese PUNKTE gesammelt. Als Hilfsmittel wird eine Stoppuhr benötigt, welche die Zeit beider Spieler misst. Der Gewinner ist dann derjenige, der am schnellsten den knopf gedrückt hat! \n1.Doppel-Klick kann bei 50 Klicks gekauft werden! \n2.Dreifach-Klick kann bei 250Klicks gekauft werden \n3.Vierfach-Klick kann bei 1000 Klicks gekauft werden \4.Pi-Klick kann bei 9999 Klicks gekauft werden! \n ***Beim Kauf fängt man komplett von neu mit den Punkten an. Der Preis wird dann jeweils von 0 abgezogen *** ")
+
+def VierfachKlick ():
+    global klick
+    global mult
+    if klick < 1000:
+        print ("Du hast leider nicht genügend Klicks gesammelt!")
+    elif klick >= 1000:
+         mult = mult*4
+         klick = mult*4
+         klick = klick - 1000
+         print ("Erfolgreich gekauft! Nun wurden deine Klicks vervierfacht!")
+
+
+
+    
+def PiKlick ():
+    global klick
+    global mult
+    if klick < 9999:
+        print ("Du hast leider nicht genügend Klicks gesammelt!")
+    elif klick >= 9999:
+         mult = mult*3.14159265359
+         klick = mult*3.14159265359
+         klick = klick - 9999
+         print ("Erfolgreich gekauft! Nun wurden deine Klicks mit pi mal genommen!")
+
+def FERTIG ():  #Dies ist der Knopf, welcher betätigt werden soll, wenn man 10000000 Punkte erreicht hat. Nun merkt man sich seine benötigte Zeit und vergleicht sie mit seinen Spielpartnern.
+    global klick
+    global mult
+    if klick < 10000000:
+        print ("Du hast leider nicht genügend Klicks gesammelt!")
+    elif klick >= 10000000:
+         print ("Stop!")
+
+
+def buttonCommand():        
+    global klick
+    global mult
+    klick += 1*(mult)
+    uiPrint()       #Hier sind diverse achievement zu sehen, welche bei einer bestimmten Anzahl an Klicks erreicht werden können.
+
+
+    if klick == 100:
+        print("***Achievement: Der erste Hunderter:+50***")
+        klick += 50
+    
+    elif klick == 1000:
+        print ("***Achievement:Der erste Tausender:+1000***")
+        klick += 1000
+        
+    elif klick == 50000:
+        print ("***Achievement: Genau 50000:+10000***")
+        klick += 10000 
+
+    elif klick == 999999:
+        print ("***Achievement: Gleich hast du die Millionen:+1***")
+        klick += 1
+
+    elif klick == 10000000:
+        print ("***Achievement: Du hast es geschafft!***")
+
+    elif klick == 1:
+        print ("***Achievement: Der erste Klick!***")
+
+    elif klick == 10:
+        print ("***Achievement: Schon 2-stellig!***")
+
+    elif klick == 50:
+        print ("***Achievement: 50 hast du also schon - Hier ein kleines Geschenk!***")
+        klick += 20
+
+
+        
+
+#Hier werden die Knöpfe durch tKinter implementiert.
+    
+mainClickButton = Button(master, text="Klick!", command=buttonCommand)
+mainClickButton.pack()
+
+DoppelKlick = Button(master, text="Doppel-Klick kaufen", command = DoppelKlick)
+DoppelKlick.pack()
+
+DreifachKlick = Button(master, text="Dreifach-Klick kaufen", command = DreifachKlick)
+DreifachKlick.pack()
+
+VierfachKlick = Button(master, text="Vierfach-Klick kaufen", command = VierfachKlick)
+VierfachKlick.pack()
+
+PiKlick = Button(master, text="Pi-Klick kaufen", command = PiKlick)
+PiKlick.pack()
+
+info = Button(master, text="INFORMATIONEN/REGELN", command = info)
+info.pack()
+
+FERTIG = Button(master, text="FERTIG", command = FERTIG)
+FERTIG.pack()
+
+master.title("Klicken:Das Spiel")
+master.geometry("%sx%s+%s+%s" % (200,200,512,512))  
+mainloop()
+
+               
