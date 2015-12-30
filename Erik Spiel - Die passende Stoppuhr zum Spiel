@@ -1,0 +1,20 @@
+import time
+
+print("Drücken sie ENTER um die Messung zu beginnen. Wenn sie nun erneut ENTER drücken, beginnt eine neue Runde. Durch Strg. und c wird der Prozess beendet.")
+input()                    # Durch ENTER beginnt die Messung 
+print("Start.")
+startzeit = time.time()    # Die erste Rundenzeit bekommen 
+letztezeit = startzeit
+rundennummer = 1
+
+
+try:
+    while True:
+        input()
+        rundenzeit = round(time.time() - letztezeit, 2)
+        gesamtzeit = round(time.time() - startzeit, 2)
+        print('Runde #%s: %s (%s)' % (rundennummer, gesamtzeit, rundenzeit), end='')
+        rundennummer += 1
+        letztezeit = time.time() # Resetten der letzten Rundenzeit
+except KeyboardInterrupt:
+            print('\nFertig.')
