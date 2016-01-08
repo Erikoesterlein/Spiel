@@ -47,8 +47,7 @@ def info():         #Die Info zeigt die Spielregeln und die Preise der diversen 
     global mult
     if klick <= 0:
         print ("Das Ziel dieses Spieles ist, als erstes 10000000 Punkte zu haben. Wenn ein Spieler 100000 Punkte hat muss der Spieler auf 'FERTIG' drücken \nDurch das Klicken werden diese PUNKTE gesammelt. Als Hilfsmittel wird eine Stoppuhr benötigt, welche die Zeit beider Spieler misst. Der Gewinner ist dann derjenige, der am schnellsten den knopf gedrückt hat! \n1.Doppel-Klick kann bei 50 Klicks gekauft werden! \n2.Dreifach-Klick kann bei 250Klicks gekauft werden \n3.Vierfach-Klick kann bei 1000 Klicks gekauft werden \4.Pi-Klick kann bei 9999 Klicks gekauft werden! \n ***Beim Kauf fängt man komplett von neu mit den Punkten an. Der Preis wird dann jeweils von 0 abgezogen ***") 
-    elif klick
-    > 0:
+    elif klick > 0:
         print ("Das Ziel dieses Spieles ist, als erstes 10000000 Punkte zu haben. Wenn ein Spieler 100000 Punkte hat muss der Spieler auf 'FERTIG' drücken \nDurch das Klicken werden diese PUNKTE gesammelt. Als Hilfsmittel wird eine Stoppuhr benötigt, welche die Zeit beider Spieler misst. Der Gewinner ist dann derjenige, der am schnellsten den knopf gedrückt hat! \n1.Doppel-Klick kann bei 50 Klicks gekauft werden! \n2.Dreifach-Klick kann bei 250Klicks gekauft werden \n3.Vierfach-Klick kann bei 1000 Klicks gekauft werden \4.Pi-Klick kann bei 9999 Klicks gekauft werden! \n ***Beim Kauf fängt man komplett von neu mit den Punkten an. Der Preis wird dann jeweils von 0 abgezogen *** ")
 
 def VierfachKlick ():
